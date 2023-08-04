@@ -34,8 +34,8 @@ function App() {
           <div className="card-body">
             <h2>Add Excercise</h2>
             <div className="card-text">
-              <input className="mb-2 form-control titleIn" placeholder="Title" onChange="{event => setTitle(event.target.value)}"/>
-              <input className="mb-2 form-control descIn" placeholder="Description" onChange="{event => setDesc(event.target.value)}"/>
+              <input className="mb-2 form-control titleIn" placeholder="Title" onChange={event => setTitle(event.target.value)}/>
+              <input className="mb-2 form-control descIn" placeholder="Description" onChange={event => setDesc(event.target.value)}/>
               <button className="btn btn-outline-primary mx-2" style={{"borderRadius":"50px", "fontWeight":"bold"}} onClick={addExerciseHandler}>Add exercise</button>
             </div>
           </div>

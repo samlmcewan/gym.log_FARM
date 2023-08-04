@@ -14,7 +14,7 @@ from database import(
 
 from model import(Exercise)
 
-origins = ['https://localhost:3000']
+origins = ['https://localhost:3000','http://localhost:3000']
 
 app.add_middleware(
     CORSMiddleware,
