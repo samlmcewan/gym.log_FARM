@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import ExcerciseView from './components/ExerciseListView';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:8000/api/exercise')
     .then(res => {
-        setExerciseList(res.data)
+        setExerciseList(res.data);
     })
   });
 
@@ -35,7 +36,7 @@ function App() {
             <div className="card-text">
               <input className="mb-2 form-control titleIn" placeholder="Title" onChange="{event => setTitle(event.target.value)}"/>
               <input className="mb-2 form-control descIn" placeholder="Description" onChange="{event => setDesc(event.target.value)}"/>
-              <button className="btn btn-outline-primary mx-2" style={{"borderRadius":"50px", "font-weight":"bold"}} onClick={addExerciseHandler}>Add exercise</button>
+              <button className="btn btn-outline-primary mx-2" style={{"borderRadius":"50px", "fontWeight":"bold"}} onClick={addExerciseHandler}>Add exercise</button>
             </div>
           </div>
         </div>
@@ -43,7 +44,7 @@ function App() {
         <div className="card">
           <h2>All exercises</h2>
           <div>
-            {/* Exercises - external component */}
+            <ExcerciseView exerciseList={exerciseList} />
           </div>
         </div>
      
